@@ -33,6 +33,7 @@ std::vector<rdma_request> rdma_context::ParseRecvFromStr() {
     }
     req.sge_num = sge_num;
     requests.push_back(req);
+    if (ss.peek() == ',') ss.ignore();
   }
   return requests;
 }
